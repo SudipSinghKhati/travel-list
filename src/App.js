@@ -20,7 +20,8 @@ export default function App() {
   }
 
   function clearListing (){
-    setItems([])
+    const conform = window.confirm("Are you sure you want to delete")
+    if(conform) setItems([])
   }
 
   return (
@@ -118,7 +119,7 @@ function PackingList({ items, onDelete, onToggle, onClear }) {
           <option value="packed">Sort by packed status</option>
         </select>
 
-        <button onClick={()=>onClear()}>
+        <button onClick={onClear}>
           Clear listing
         </button>
       </div>
